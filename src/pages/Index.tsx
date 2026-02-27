@@ -13,15 +13,18 @@ const Index = () => (
   <main className="bg-background">
     <HeroSection />
     <div className="h-screen" />
-    <div className="relative z-10 bg-background">
-    <StorySection />
-    <VisualDivider image={lightCurtains} alt="Luz suave entrando por ventanas" />
-    <ServicesSection />
-    <VisualDivider image={natureLight} alt="Naturaleza serena con luz dorada" />
-    <KitSection />
-    <TestimonialsSection />
-    <CTASection />
-    <FooterSection />
+    <div className="relative z-10">
+      <div className="h-40 bg-gradient-to-b from-transparent to-background -mt-40" />
+      <div className="bg-background">
+        <StorySection />
+        <VisualDivider image={lightCurtains} alt="Luz suave entrando por ventanas" />
+        <ServicesSection />
+        <VisualDivider image={natureLight} alt="Naturaleza serena con luz dorada" />
+        <KitSection />
+        <TestimonialsSection />
+        <CTASection />
+        <FooterSection />
+      </div>
     </div>
   </main>
 );
