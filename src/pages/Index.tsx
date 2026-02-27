@@ -1,14 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import StorySection from "@/components/StorySection";
+import ServicesSection from "@/components/ServicesSection";
+import KitSection from "@/components/KitSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import VisualDivider from "@/components/VisualDivider";
+import CTASection from "@/components/CTASection";
+import FooterSection from "@/components/FooterSection";
+import lightCurtains from "@/assets/light-curtains.png";
+import natureLight from "@/assets/nature-light.png";
 
-const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+const Index = () => (
+  <main className="bg-background">
+    <HeroSection />
+    <StorySection />
+    <VisualDivider image={lightCurtains} alt="Luz suave entrando por ventanas" />
+    <ServicesSection />
+    <VisualDivider image={natureLight} alt="Naturaleza serena con luz dorada" />
+    <KitSection />
+    <TestimonialsSection />
+    <CTASection />
+    <FooterSection />
+  </main>
+);
 
 export default Index;
