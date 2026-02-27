@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-hands.png";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section className="fixed inset-0 min-h-screen flex items-center justify-center overflow-hidden z-0">
     {/* Background image */}
     <div className="absolute inset-0">
       <img

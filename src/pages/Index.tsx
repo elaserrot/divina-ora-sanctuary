@@ -12,6 +12,8 @@ import natureLight from "@/assets/nature-light.png";
 const Index = () => (
   <main className="bg-background">
     <HeroSection />
+    <div className="h-screen" />
+    <div className="relative z-10 bg-background">
     <StorySection />
     <VisualDivider image={lightCurtains} alt="Luz suave entrando por ventanas" />
     <ServicesSection />
@@ -20,6 +22,7 @@ const Index = () => (
     <TestimonialsSection />
     <CTASection />
     <FooterSection />
+    </div>
   </main>
 );
 
