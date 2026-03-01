@@ -6,11 +6,13 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import VisualDivider from "@/components/VisualDivider";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
+import Navbar from "@/components/Navbar";
 import lightCurtains from "@/assets/light-curtains.png";
 import natureLight from "@/assets/nature-light.png";
 
 const Index = () => (
   <main className="bg-background">
+    <Navbar />
     <HeroSection />
     <div className="h-screen" />
     <div className="relative z-10">
