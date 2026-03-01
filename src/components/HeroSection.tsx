@@ -6,7 +6,7 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="fixed inset-0 min-h-screen flex items-center justify-center overflow-hidden z-0">
+    <section className="fixed inset-0 min-h-screen flex items-center justify-center overflow-hidden z-0 w-screen max-w-full">
       <div className="absolute inset-0">
         <img src={heroImage} alt="Manos sosteniendo luz espiritual" className="w-full h-full object-cover" loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />

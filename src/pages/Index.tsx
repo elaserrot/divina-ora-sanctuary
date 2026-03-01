@@ -11,7 +11,7 @@ import lightCurtains from "@/assets/light-curtains.png";
 import natureLight from "@/assets/nature-light.png";
 
 const Index = () => (
-  <main className="bg-background">
+  <main className="bg-background overflow-x-hidden">
     <Navbar />
     <HeroSection />
     <div className="h-screen" />
