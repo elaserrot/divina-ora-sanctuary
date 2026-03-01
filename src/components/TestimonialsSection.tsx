@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
   const duplicated = [...testimonials, ...testimonials];
 
   return (
-    <section className="py-24 md:py-36 px-6 bg-secondary/30 overflow-hidden">
+    <section className="py-24 md:py-36 px-6 bg-secondary/30 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <AnimatedSection className="text-center mb-20">
           <p className="text-sm tracking-[0.3em] uppercase text-primary mb-4">{t("testimonialsLabel")}</p>

@@ -6,7 +6,7 @@ const FooterSection = () => {
   const { t } = useLanguage();
 
   return (
-   <footer className="relative py-16 px-6 border-t border-border/30 overflow-hidden">
+   <footer className="relative py-16 px-6 border-t border-border/30 overflow-x-hidden">
 
   {/* Frase gigante de fondo */}
   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

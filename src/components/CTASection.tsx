@@ -6,7 +6,7 @@ const CTASection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24 md:py-36 px-6">
+    <section className="py-24 md:py-36 px-6 overflow-hidden">
       <div className="max-w-3xl mx-auto text-center">
         <AnimatedSection>
           <div className="relative">
