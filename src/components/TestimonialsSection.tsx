@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const TestimonialCard = ({ name, text, initials }: { name: string; text: string; initials: string }) => (
-  <div className="glass-card p-8 md:p-10 flex flex-col min-w-[320px] max-w-[400px] shrink-0">
+  <div className="glass-card p-8 md:p-10 flex flex-col min-w-[320px] max-w-[400px] shrink-0 snap-start">
     <div className="flex gap-1 mb-6">
       {[...Array(5)].map((_, j) => (
         <Star key={j} className="w-4 h-4 fill-primary text-primary" />
@@ -41,8 +41,8 @@ const TestimonialsSection = () => {
         </AnimatedSection>
       </div>
 
-      <div className="relative">
-        <div className="flex gap-8 animate-carousel">
+      <div className="relative overflow-hidden">
+        <div className="flex gap-8 animate-carousel overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide">
           {duplicated.map((t, i) => (
             <TestimonialCard key={`${t.name}-${i}`} {...t} />
           ))}
