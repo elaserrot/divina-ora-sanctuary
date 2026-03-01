@@ -1,51 +1,67 @@
-import AnimatedSection from "./AnimatedSection";
-import kitProducts from "@/assets/kit-products.png";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+import kit1Img from "@/assets/kit1.png";
+import kit2Img from "@/assets/kit2.png";
+import kit3Img from "@/assets/kit3.jpg";
+
 const KitSection = () => {
   const { t } = useLanguage();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const products = [
-    { name: t("kit1Name"), desc: t("kit1Desc") },
-    { name: t("kit2Name"), desc: t("kit2Desc") },
-    { name: t("kit3Name"), desc: t("kit3Desc") },
+    { name: t("kit1Name"), desc: t("kit1Desc"), img: kit1Img },
+    { name: t("kit2Name"), desc: t("kit2Desc"), img: kit2Img },
+    { name: t("kit3Name"), desc: t("kit3Desc"), img: kit3Img },
   ];
 
   return (
-    <section className="py-24 md:py-36 px-6">
-      <div className="max-w-6xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <p className="text-sm tracking-[0.3em] uppercase text-primary mb-4">{t("kitLabel")}</p>
-          <h2 className="text-3xl md:text-5xl font-display font-light text-foreground">{t("kitTitle")}</h2>
-          <div className="section-divider mt-8" />
-        </AnimatedSection>
+    <section className="py-32 px-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <AnimatedSection>
-            <div className="relative">
-              <div className="absolute -inset-6 bg-gradient-to-tr from-gold-light/20 via-transparent to-lilac/20 rounded-3xl blur-3xl" />
-              <img src={kitProducts} alt="Kit espiritual Divina Obra" className="relative rounded-2xl w-full object-cover shadow-soft" loading="lazy" />
-            </div>
-          </AnimatedSection>
+        {/* LEFT SIDE - TEXT VERTICAL */}
+        <div className="space-y-40">
+          {products.map((product, i) => (
+            <motion.div
+              key={product.name}
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.6 }}
+              transition={{ duration: 0.8 }}
+              onViewportEnter={() => setActiveIndex(i)}
+              className="min-h-[60vh] flex flex-col justify-center"
+            >
+              <span className="text-sm text-primary/60 mb-4">
+                0{i + 1}
+              </span>
 
-          <AnimatedSection delay={0.2}>
-            <div className="space-y-8">
-              {products.map((product, i) => (
-                <motion.div key={product.name} whileHover={{ x: 4 }} transition={{ duration: 0.3 }} className="group">
-                  <div className="flex items-start gap-4">
-                    <span className="text-sm text-primary/60 font-body mt-1">0{i + 1}</span>
-                    <div>
-                      <h3 className="text-lg font-display font-medium text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{product.name}</h3>
-                      <p className="text-muted-foreground font-body text-sm leading-relaxed">{product.desc}</p>
-                    </div>
-                  </div>
-                  {i < products.length - 1 && <div className="section-divider mt-8 !mx-0 !w-full" />}
-                </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
+              <h3 className="text-2xl md:text-3xl font-display mb-6">
+                {product.name}
+              </h3>
+
+              <p className="text-muted-foreground leading-relaxed max-w-md">
+                {product.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
+
+        {/* RIGHT SIDE - STICKY IMAGE */}
+        <div className="relative hidden md:block">
+          <div className="sticky top-32">
+            <motion.img
+              key={activeIndex}
+              src={products[activeIndex].img}
+              alt="kit"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9 }}
+              className="rounded-3xl shadow-xl w-full object-cover"
+            />
+          </div>
+        </div>
+
       </div>
     </section>
   );

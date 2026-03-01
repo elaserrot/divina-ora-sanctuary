@@ -21,7 +21,7 @@ const FooterSection = () => {
         Divina Obra
       </h3>
 
-      <p className="text-muted-foreground font-body text-base italic max-w-lg mx-auto leading-relaxed">
+      <p className="text-muted-foreground font-body text-lg italic max-w-lg mx-auto leading-relaxed">
         {t("footerQuote")}
       </p>
 
