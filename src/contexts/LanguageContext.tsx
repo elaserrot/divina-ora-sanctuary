@@ -126,8 +126,14 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   );
 };
 
-export const useLanguage = () => {
+// Fallback for HMR edge cases
+const fallback: LanguageContextType = {
+  lang: "es",
+  setLang: () => {},
+  t: (key: TranslationKey) => translations.es[key],
+};
+
+export const useLanguage = (): LanguageContextType => {
   const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
-  return ctx;
+  return ctx ?? fallback;
 };
