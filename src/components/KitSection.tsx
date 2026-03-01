@@ -25,7 +25,7 @@ const KitSection = () => {
           <AnimatedSection>
             <div className="relative">
               <div className="absolute -inset-6 bg-gradient-to-tr from-gold-light/20 via-transparent to-lilac/20 rounded-3xl blur-3xl" />
-              <img src={kitProducts} alt="Kit espiritual Divina Ora" className="relative rounded-2xl w-full object-cover shadow-soft" loading="lazy" />
+              <img src={kitProducts} alt="Kit espiritual Divina Obra" className="relative rounded-2xl w-full object-cover shadow-soft" loading="lazy" />
             </div>
           </AnimatedSection>
 
